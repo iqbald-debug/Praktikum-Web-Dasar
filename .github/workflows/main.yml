@@ -1,3 +1,4 @@
+```yaml
 name: Deploy to Teacher Server
 
 on:
@@ -18,6 +19,14 @@ jobs:
         env:
           WEBHOOK_KEY: ${{ secrets.AAPANEL_WEBHOOK_KEY }}
         run: |
-          curl -kfsS --retry 2 --retry-delay 3 \
+          if [ -z "$WEBHOOK_KEY" ]; then
+            echo "Error: AAPANEL_WEBHOOK_KEY belum diatur"
+            exit 1
+          fi
+
+          curl --globoff -kfsS \
+            --retry 2 \
+            --retry-delay 3 \
             -X POST \
-            "https://panel.myriset.my.id:25181/hook?access_key=${WEBHOOK_KEY}"
+            --url "https://panel.myriset.my.id:25181/hook?access_key=${WEBHOOK_KEY}"
+```

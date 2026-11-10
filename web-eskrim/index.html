@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Warung Ice Cream</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    >
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container navbar-content">
+
+            <div class="logo">
+                <i class="fas fa-ice-cream"></i>
+                <span>IceCream</span>
+            </div>
+
+            <div class="nav-menu">
+                <a href="#" class="nav-link active" data-filter="all">
+                    Semua
+                </a>
+
+                <a href="#" class="nav-link" data-filter="es-krim">
+                    Es Krim
+                </a>
+
+                <a href="#" class="nav-link" data-filter="sundae">
+                    Sundae
+                </a>
+
+                <a href="#" class="nav-link" data-filter="minuman">
+                    Minuman
+                </a>
+            </div>
+
+            <button class="cart-btn" id="openCart">
+                <i class="fas fa-shopping-cart"></i>
+                <span>Keranjang</span>
+                <span class="cart-count">0</span>
+            </button>
+
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container hero-content">
+
+            <div class="hero-text">
+                <span class="hero-label">
+                    <i class="fas fa-star"></i>
+                    Ice Cream Favorit
+                </span>
+
+                <h1>
+                    Manisnya Bikin
+                    <span>Bahagia</span>
+                </h1>
+
+                <p>
+                    Nikmati berbagai pilihan es krim dan minuman
+                    segar dengan rasa yang bikin nagih.
+                </p>
+
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+
+                    <input
+                        type="text"
+                        id="searchProduk"
+                        placeholder="Cari produk..."
+                    >
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="produk-section">
+        <div class="container">
+
+            <div class="section-header">
+                <div>
+                    <span class="section-label">Menu Kami</span>
+                    <h2>Pilih Favoritmu</h2>
+                </div>
+
+                <div class="filter-buttons">
+                    <button
+                        class="filter-btn active"
+                        data-cat="all"
+                    >
+                        Semua
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-cat="es-krim"
+                    >
+                        Es Krim
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-cat="sundae"
+                    >
+                        Sundae
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-cat="minuman"
+                    >
+                        Minuman
+                    </button>
+                </div>
+            </div>
+
+            <div id="produkGrid" class="produk-grid">
+            </div>
+
+        </div>
+    </section>
+
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <aside class="cart-sidebar" id="cartSidebar">
+
+        <div class="cart-header">
+            <div>
+                <h3>Keranjang</h3>
+                <span>Pesanan kamu</span>
+            </div>
+
+            <button id="closeCart" class="close-cart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div id="cartItems" class="cart-items">
+        </div>
+
+        <div class="cart-footer">
+
+            <div class="cart-total">
+                <span>Total</span>
+                <strong id="cartTotal">
+                    Rp 0
+                </strong>
+            </div>
+
+            <button id="checkoutBtn" class="checkout-btn">
+                <span>Checkout</span>
+                <i class="fas fa-arrow-right"></i>
+            </button>
+
+        </div>
+
+    </aside>
+
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage"></span>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+
+            <div class="footer-content">
+
+                <div class="footer-logo">
+                    <i class="fas fa-ice-cream"></i>
+                    <span>IceCream</span>
+                </div>
+
+                <p>
+                    Es krim dan minuman favorit untuk
+                    menemani hari-harimu.
+                </p>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>
+                    &copy; 2026 Warung Ice Cream.
+                    All rights reserved.
+                </p>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

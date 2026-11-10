@@ -1,0 +1,526 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #222;
+    background: #fff;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* NAVBAR */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: white;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.nav-container {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #222;
+    text-decoration: none;
+}
+
+.logo span,
+footer span {
+    color: #0b8f87;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.nav-menu a:hover {
+    color: #0b8f87;
+}
+
+
+/* HERO */
+
+.hero {
+    height: 100vh;
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.45)
+        ),
+        url("https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1600&q=80");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    color: white;
+}
+
+.hero-subtitle {
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 60px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    max-width: 600px;
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+
+/* BUTTON */
+
+.btn {
+    display: inline-block;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 6px;
+
+    background: #0b8f87;
+    color: white;
+
+    text-decoration: none;
+    cursor: pointer;
+
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: #08736d;
+}
+
+
+/* SECTION */
+
+.section {
+    padding: 100px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title p {
+    color: #0b8f87;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.section-title h2 {
+    font-size: 36px;
+}
+
+
+/* TABS */
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.tab-btn {
+    border: none;
+    padding: 12px 25px;
+    background: #eee;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.tab-btn.active {
+    background: #0b8f87;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+
+/* DESTINATION */
+
+.destination-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.destination-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.destination-image {
+    height: 230px;
+    background-size: cover;
+    background-position: center;
+}
+
+.bali {
+    background-image: url("https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80");
+}
+
+.gili {
+    background-image: url("https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&w=800&q=80");
+}
+
+.raja-ampat {
+    background-image: url("https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80");
+}
+
+.bromo {
+    background-image: url("https://images.unsplash.com/photo-1518002054494-3a6f94352e9d?auto=format&fit=crop&w=800&q=80");
+}
+
+.dieng {
+    background-image: url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80");
+}
+
+.rinjani {
+    background-image: url("https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=800&q=80");
+}
+
+.labuan {
+    background-image: url("https://images.unsplash.com/photo-1540202404-a2f29016b523?auto=format&fit=crop&w=800&q=80");
+}
+
+.toba {
+    background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80");
+}
+
+.nusa {
+    background-image: url("https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?auto=format&fit=crop&w=800&q=80");
+}
+
+.jogja {
+    background-image: url("https://images.unsplash.com/photo-1596402184320-417e7178b2cd?auto=format&fit=crop&w=800&q=80");
+}
+
+.toraja {
+    background-image: url("https://images.unsplash.com/photo-1596402184320-417e7178b2cd?auto=format&fit=crop&w=800&q=80");
+}
+
+.ubud {
+    background-image: url("https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80");
+}
+
+.destination-info {
+    padding: 20px;
+}
+
+.destination-info h3 {
+    margin-bottom: 8px;
+}
+
+
+/* PACKAGE */
+
+.paket-section {
+    background: #f5f7f7;
+}
+
+.package-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.package-card {
+    background: white;
+    padding: 30px 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.package-card h3 {
+    margin-bottom: 10px;
+}
+
+.package-card .duration {
+    color: #0b8f87;
+    font-weight: bold;
+}
+
+.package-card p {
+    margin: 15px 0;
+}
+
+.package-card h4 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+
+/* PROMO */
+
+.promo {
+    padding: 60px 0;
+    background: #0b8f87;
+    color: white;
+}
+
+.promo-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.promo .btn {
+    background: white;
+    color: #0b8f87;
+}
+
+.promo-detail {
+    display: none;
+    text-align: center;
+    margin-top: 30px;
+}
+
+
+/* ABOUT */
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.about-text .section-title {
+    text-align: left;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+}
+
+.about-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.feature {
+    padding: 25px;
+    border-radius: 10px;
+    background: #f5f7f7;
+}
+
+.feature span {
+    font-size: 30px;
+}
+
+.feature h3 {
+    margin: 10px 0;
+}
+
+
+/* BOOKING */
+
+.booking-section {
+    background: #f5f7f7;
+}
+
+.booking-form {
+    max-width: 900px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-submit {
+    grid-column: 1 / -1;
+    text-align: center;
+}
+
+
+/* VALIDATION */
+
+label.error {
+    color: #d63031;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+
+/* FOOTER */
+
+footer {
+    background: #172121;
+    color: white;
+}
+
+.footer-content {
+    padding: 60px 0;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+}
+
+.footer-content h2,
+.footer-content h3 {
+    margin-bottom: 15px;
+}
+
+.copyright {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #333;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .nav-menu {
+        gap: 12px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .destination-grid,
+    .package-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .nav-container {
+        flex-direction: column;
+        height: auto;
+        padding: 15px 0;
+        gap: 10px;
+    }
+
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    .destination-grid,
+    .package-grid,
+    .booking-form {
+        grid-template-columns: 1fr;
+    }
+
+    .about-features {
+        grid-template-columns: 1fr;
+    }
+
+    .promo-container {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .full-width,
+    .form-submit {
+        grid-column: auto;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+}

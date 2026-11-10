@@ -1,0 +1,155 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keranjang Belanja</title>
+    <link rel="stylesheet" href="style.css">
+
+   
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Belanja Online</h1>
+
+    <div class="produk-container">
+
+        <div class="produk">
+            <h3>Kaos</h3>
+            <p>Rp 50.000</p>
+            <button onclick="tambahCart('Kaos', 50000)">
+                Tambah
+            </button>
+        </div>
+
+        <div class="produk">
+            <h3>Celana</h3>
+            <p>Rp 75.000</p>
+            <button onclick="tambahCart('Celana', 75000)">
+                Tambah
+            </button>
+        </div>
+
+        <div class="produk">
+            <h3>Sepatu</h3>
+            <p>Rp 150.000</p>
+            <button onclick="tambahCart('Sepatu', 150000)">
+                Tambah
+            </button>
+        </div>
+
+    </div>
+
+
+    <div class="cart">
+
+        <h2>Keranjang</h2>
+
+        <div id="cartItems">
+            Keranjang masih kosong
+        </div>
+
+        <div class="total">
+            <p>
+                Total:
+                <strong id="cartTotal">Rp 0</strong>
+            </p>
+
+            <p class="diskon" id="diskonText"></p>
+
+            <button
+                class="checkout-btn"
+                onclick="bukaModal()">
+                Checkout
+            </button>
+        </div>
+
+    </div>
+
+    <div class="riwayat">
+
+        <h2>Riwayat Transaksi</h2>
+
+        <div id="riwayatContainer">
+            Belum ada transaksi.
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="modal" id="modalPembeli">
+
+    <div class="modal-content">
+
+        <h2>Data Pembeli</h2>
+
+        <form id="formPembeli">
+
+            <label>Nama Lengkap</label>
+
+            <input
+                type="text"
+                id="nama"
+                placeholder="Masukkan nama">
+
+            <div
+                class="error"
+                id="errorNama">
+            </div>
+
+
+            <label>Alamat</label>
+
+            <textarea
+                id="alamat"
+                placeholder="Masukkan alamat">
+            </textarea>
+
+            <div
+                class="error"
+                id="errorAlamat">
+            </div>
+
+
+            <label>No HP</label>
+
+            <input
+                type="text"
+                id="nohp"
+                placeholder="08xxxxxxxxxx">
+
+            <div
+                class="error"
+                id="errorNohp">
+            </div>
+
+
+            <button
+                type="submit"
+                class="btn-simpan">
+                Konfirmasi Checkout
+            </button>
+
+            <button
+                type="button"
+                class="btn-batal"
+                onclick="tutupModal()">
+                Batal
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

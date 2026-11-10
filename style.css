@@ -1,108 +1,234 @@
-* ===== 1. Warna =====
-Variabel CSS: ubah warna cukup di sini saja. */
+
 :root {
-  --latar: #eef3f1;
-  --kartu:rgb(255, 255, 255);
-  --teks: #1c2b27;
-  --teks-pudar: #5f726c;
-  --aksen: #0f766e;
+  --bg: #e0e5ec;
+  --surface: #e0e5ec;
+  --text: #3d4a5c;
+  --muted: #6b7a90;
+  --accent: #6c63ff;
+  --shadow-dark: #a3b1c6;
+  --shadow-light: #ffffff;
+  --radius: 20px;
+  --radius-sm: 14px;
 }
-/* Saat body diberi class "gelap" oleh JavaScript, warna berganti */
-body.gelap {
-  --latar: #121a18;
-  --kartu: #1b2623;
-  --teks: #e6efec;
-  --teks-pudar: #94a8a1;
-  --aksen: #5fd1c4;
+
+body.dark {
+  --bg: #2b2f36;
+  --surface: #2b2f36;
+  --text: #e6ebf2;
+  --muted: #a7b1c2;
+  --accent: #8b84ff;
+  --shadow-dark: #1f2228;
+  --shadow-light: #373c45;
 }
-/* ===== 2. Dasar halaman ===== */
+
 * {
   box-sizing: border-box;
 }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg);
+  color: var(--text);
   line-height: 1.6;
-  background: var(--latar);
-  color: var(--teks);
+  min-height: 100vh;
+  transition: background 0.3s ease, color 0.3s ease;
 }
-/* ===== 3. Bagian atas ===== */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 24px;
-}
-.logo {
-  margin: 0;
-  color: var(--aksen);
-}
-#tombol-tema {
-  padding: 8px 16px;
-  border: 2px solid var(--aksen);
-  border-radius: 20px;
-  background: transparent;
-  color: var(--aksen);
-  cursor: pointer;
-}
-/* ===== 4. Isi halaman ===== */
-.isi {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 24px 60px;
-}
-.perkenalan {
-  padding: 50px 0 20px;
-}
-.perkenalan h1 {
-  font-size: 2.6rem;
-  margin: 0 0 8px;
-}
-.perkenalan p {
-  color: var(--teks-pudar);
-  font-size: 1.1rem;
-  margin: 0;
-}
-/* ===== 5. Pencarian ===== */
-#cari {
-  width: 100%;
-  padding: 12px 16px;
-  margin: 8px 0 20px;
-  border: black 1px solid ;
-  border-radius: 10px;
-  font-size: 1rem;
-  background: var(--kartu);
-  color: var(--teks);
-}
-/* ===== 6. Kartu proyek ===== */
-.daftar-proyek {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
-}
-.kartu {
-  display: block;
-  padding: 24px;
-  background: var(--kartu);
-  border-radius: 14px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+
+a {
   color: inherit;
   text-decoration: none;
-  transition: transform 0.2s;
 }
+
+/* ===== Header ===== */
+.header {
+  max-width: 1100px;
+  margin: 24px auto 0;
+  padding: 18px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: 9px 9px 16px var(--shadow-dark), -9px -9px 16px var(--shadow-light);
+}
+
+.logo {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--text);
+}
+
+#tombol-tema {
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--surface);
+  border: none;
+  padding: 12px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 6px 6px 12px var(--shadow-dark), -6px -6px 12px var(--shadow-light);
+  transition: box-shadow 0.2s ease, color 0.2s ease, transform 0.1s ease;
+}
+
+#tombol-tema:hover {
+  color: var(--accent);
+}
+
+#tombol-tema:active {
+  box-shadow: inset 4px 4px 8px var(--shadow-dark), inset -4px -4px 8px var(--shadow-light);
+  transform: translateY(1px);
+}
+
+#tombol-tema:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ===== Main content ===== */
+.isi {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 24px 64px;
+}
+
+.perkenalan {
+  margin: 10px 0 36px;
+  padding: 32px 34px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: inset 6px 6px 12px var(--shadow-dark), inset -6px -6px 12px var(--shadow-light);
+}
+
+.perkenalan h1 {
+  margin: 0 0 10px;
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  line-height: 1.2;
+  color: var(--text);
+}
+
+.perkenalan p {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--muted);
+  max-width: 720px;
+}
+
+.isi > h2 {
+  margin: 0 0 16px;
+  font-size: 1.5rem;
+  color: var(--text);
+}
+
+/* ===== Search ===== */
+#cari {
+  width: 100%;
+  max-width: 420px;
+  padding: 14px 18px;
+  margin-bottom: 28px;
+  font: inherit;
+  font-size: 1rem;
+  color: var(--text);
+  background: var(--surface);
+  border: none;
+  border-radius: 999px;
+  box-shadow: inset 5px 5px 10px var(--shadow-dark), inset -5px -5px 10px var(--shadow-light);
+  transition: box-shadow 0.2s ease;
+}
+
+#cari::placeholder {
+  color: var(--muted);
+}
+
+#cari:focus {
+  outline: none;
+  box-shadow: inset 3px 3px 6px var(--shadow-dark), inset -3px -3px 6px var(--shadow-light),
+    0 0 0 3px rgba(108, 99, 255, 0.18);
+}
+
+/* ===== Project cards ===== */
+.daftar-proyek {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.kartu {
+  display: block;
+  padding: 24px 22px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: 9px 9px 16px var(--shadow-dark), -9px -9px 16px var(--shadow-light);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
 .kartu:hover {
   transform: translateY(-4px);
+  box-shadow: 12px 12px 20px var(--shadow-dark), -12px -12px 20px var(--shadow-light);
 }
+
+.kartu:active {
+  transform: translateY(0);
+  box-shadow: inset 6px 6px 12px var(--shadow-dark), inset -6px -6px 12px var(--shadow-light);
+}
+
 .kartu h3 {
-  margin: 0 0 6px;
-  color: var(--aksen);
+  margin: 0 0 8px;
+  font-size: 1.15rem;
+  color: var(--text);
 }
+
 .kartu p {
   margin: 0;
-  color: var(--teks-pudar);
+  font-size: 0.98rem;
+  color: var(--muted);
 }
-/* Pesan "tidak ditemukan" disembunyikan dulu */
+
+.kartu:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ===== Empty state ===== */
 .pesan-kosong {
   display: none;
-  color: var(--teks-pudar);
+  margin-top: 24px;
+  padding: 18px 20px;
+  text-align: center;
+  color: var(--muted);
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+  box-shadow: inset 4px 4px 8px var(--shadow-dark), inset -4px -4px 8px var(--shadow-light);
+}
+
+.pesan-kosong.tampil {
+  display: block;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 640px) {
+  .header {
+    margin: 16px 16px 0;
+    padding: 16px 18px;
+  }
+
+  .isi {
+    padding: 28px 16px 48px;
+  }
+
+  .perkenalan {
+    padding: 24px 20px;
+  }
+
+  #cari {
+    max-width: 100%;
+  }
 }
